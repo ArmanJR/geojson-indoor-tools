@@ -2,23 +2,21 @@ import json
 from turfpy.measurement import boolean_point_in_polygon
 from geojson import Point, Polygon, Feature
 
-f = open('data/input.geojson')
+f = open('data/features-inside-area/input.geojson', encoding='utf-8')
 data = json.load(f)
 area = Polygon(
     [
         [
-            (51.534273819789206,
-              35.7304129735428),
-            (51.533968300502096,
-              35.729250849295525),
-            (51.53522238443253,
-              35.729130384227204),
-            (51.53572867353867,
-              35.72989568862401),
-            (51.535519174597965,
-              35.730221649375224),
-            (51.534273819789206,
-              35.7304129735428),
+            (51.50458326685279,
+              35.78888602953624),
+            (51.504154202748055,
+              35.78816800797169),
+            (51.50523193069549,
+              35.787787070232895),
+            (51.5056441025109,
+              35.788516057402845),
+            (51.50458326685279,
+              35.78888602953624),
         ]
     ]
 )
@@ -57,7 +55,7 @@ newGeojson = {}
 newGeojson['type'] = 'FeatureCollection'
 newGeojson['features'] = newFeatures
 
-with open('data/output.geojson', 'w') as f:
+with open('data/features-inside-area/output.geojson', 'w', encoding='utf-8') as f:
     json.dump(newGeojson, f)
   
 f.close()

@@ -4,22 +4,15 @@ from geojson import Point, Polygon, Feature
 
 f = open('data/features-inside-area/input.geojson', encoding='utf-8')
 data = json.load(f)
-area = Polygon(
-    [
-        [
-            (51.50458326685279,
-              35.78888602953624),
-            (51.504154202748055,
-              35.78816800797169),
-            (51.50523193069549,
-              35.787787070232895),
-            (51.5056441025109,
-              35.788516057402845),
-            (51.50458326685279,
-              35.78888602953624),
-        ]
-    ]
-)
+
+fPoly = open('data/features-inside-area/polygon.txt', 'r')
+lines = fPoly.readlines()
+polygonCords = []
+for line in lines:
+    coords = line.split(',')
+    polygonCords.append((float(coords[0]), float(coords[1])))
+
+area = Polygon([polygonCords])
 
 count = 0
 newFeatures = []

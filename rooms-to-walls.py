@@ -2,14 +2,15 @@ from turfpy.transformation import transform_scale
 from geojson import Polygon, Feature
 import json
 
-zeta = 0.1
+zeta = 0.05
 
 f = open('data/rooms-to-walls/input.geojson', encoding='utf-8')
 data = json.load(f)
 
-finalGeo = data
+wallsFeatures = []
 for feature in data['features']:
     if feature['geometry']['type'] != 'Polygon':
+        wallsFeatures.append(feature)
         continue
 
     f = Feature(geometry=Polygon(feature['geometry']['coordinates']))
@@ -29,9 +30,11 @@ for feature in data['features']:
         }
     }
 
-    finalGeo['features'] = finalGeo['features'] + [wallsFeature]
+    wallsFeatures.append(wallsFeature)
+
+newGeojson = {'type': 'FeatureCollection', 'features': wallsFeatures}
 
 with open('data/rooms-to-walls/output.geojson', 'w', encoding='utf-8') as f:
-    json.dump(finalGeo, f)
+    json.dump(newGeojson, f)
 
 f.close()

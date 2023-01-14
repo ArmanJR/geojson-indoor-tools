@@ -4,9 +4,9 @@ Quick GeoJSON tools for editing and modifying geojson data.
 
 ## Available Scripts
 
-- Features inside area
-- Add polygons heights
-- Rooms-to-walls
+- [Features inside area](#features-inside-area)
+- [Add polygons heights](#add-polygons-heights)
+- [Rooms to walls](#rooms-to-walls)
 
 ### Features inside area
 

@@ -32,7 +32,7 @@ python3 add-polygon-heights.py
 
 Create walls for any polygon room. You can adjust the wall thickness with `zeta`. It also sets `height` so walls are differentiable from the original room polygon.
 
-![before](img/rooms-to-walls-before.jpeg)
+![before](img/rooms-to-walls-before.png)
 
 ![after](img/rooms-to-walls-after.jpeg)
 

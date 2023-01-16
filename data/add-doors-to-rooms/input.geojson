@@ -1,0 +1,137 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "main",
+        "tags": {
+          "indoor": "room"
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              51.50464617049437,
+              35.78840845317849
+            ],
+            [
+              51.504616142259096,
+              35.7883517645908
+            ],
+            [
+              51.504701313255595,
+              35.78832784908049
+            ],
+            [
+              51.504729703586946,
+              35.788386309203744
+            ],
+            [
+              51.50464617049437,
+              35.78840845317849
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "room_id": "main",
+        "tags": {
+          "door": "yes"
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          51.50466042686688,
+          35.78840629697093
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "room_id": "main",
+        "tags": {
+          "door": "yes"
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          51.504725749093296,
+          35.78837492487433
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "room_id": "main",
+        "tags": {
+          "door": "yes"
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          51.50465952706293,
+          35.78834294793336
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "triangle",
+        "tags": {
+          "indoor": "room"
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              51.50461589395573,
+              35.788404705007125
+            ],
+            [
+              51.50457448819037,
+              35.788415900879016
+            ],
+            [
+              51.50457602173688,
+              35.78835494555621
+            ],
+            [
+              51.50461589395573,
+              35.788404705007125
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "room_id": "triangle",
+        "tags": {
+          "door": "yes"
+        }
+      },
+      "geometry": {
+        "coordinates": [
+          51.50457295464386,
+          35.78839624590276
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}

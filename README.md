@@ -1,6 +1,6 @@
-# GeoJSON tools
+# GeoJSON Indoor Tools
 
-Quick GeoJSON tools for editing and modifying geojson data.
+Quick GeoJSON tools for editing and modifying geojson data, focusing on indoor features.
 
 ## Available Scripts
 

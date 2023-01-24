@@ -5,7 +5,7 @@ from turfpy.measurement import center, point_to_line_distance
 
 circle_radius_cm = 60
 include_lintels = True
-lintel_properties = {'height': 8, 'base_height': 5}
+lintel_properties = {'height': 8, 'base_height': 5, 'tags': {'indoor': 'lintel'}}
 
 f = open('data/add-doors-to-rooms/input.geojson', encoding='utf-8')
 data = json.load(f)

@@ -5,8 +5,9 @@ import warnings
 
 warnings.filterwarnings('ignore')  # for turfpy warnings
 zeta = 0.07  # walls thickness of polygons
-walls_thickness = 1.04  # walls thickness of non-polygons
-walls_properties = {'height': 5, 'color': 'green'}
+walls_thickness = 50  # walls thickness of non-polygons
+walls_properties = {'height': 6, 'color': 'green'}
+lintel_properties = {'height': 6, 'base_height': 4, 'color': 'green'}
 include_original = False
 
 
@@ -21,21 +22,30 @@ def polygon_walls(poly):
     walls_feature = {
         'type': 'Feature', 'properties': walls_properties, 'geometry': {
             'type': 'Polygon',
-            'coordinates': [walls_coords]
+            'coordinates': [walls_coords],
+            'tags': {
+                'indoor': 'room'
+            }
         }
     }
     return walls_feature
 
 
 def line_string_walls(line_string):
-    offset_top = line_offset(line_string['geometry'], distance=walls_thickness, unit='m')
-    offset_bot = line_offset(line_string['geometry'], distance=-walls_thickness, unit='m')
+    offset_top = line_offset(line_string['geometry'], distance=walls_thickness, unit='cen')
+    offset_bot = line_offset(line_string['geometry'], distance=-walls_thickness, unit='cen')
     merged_coords = [
         offset_top['geometry']['coordinates'] +
         list(reversed(offset_bot['geometry']['coordinates'])) +
         [offset_top['geometry']['coordinates'][0]]
     ]
-    return Feature(geometry=Polygon(coordinates=merged_coords), properties=walls_properties)
+
+    if 'tags' in line_string['properties'] and line_string['properties']['tags'].get('indoor') == 'lintel':
+        properties = lintel_properties
+    else:
+        properties = walls_properties
+
+    return Feature(geometry=Polygon(coordinates=merged_coords), properties=properties)
 
 
 def multi_line_string_walls(multi_line_string):
